@@ -29,6 +29,7 @@ android {
     productFlavors {
         dev {
             buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "API_KEY", API_KEY
         }
     }
 

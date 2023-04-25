@@ -2,6 +2,7 @@ package com.criticaltechworks.topheadlines.core.appconfig
 
 import com.criticaltechworks.topheadlines.BuildConfig
 import com.criticaltechworks.topheadlines.core.network.ApiBaseUrl
+import com.criticaltechworks.topheadlines.core.network.ApiKey
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,4 +14,8 @@ object AppModule {
     @ApiBaseUrl
     @Provides
     fun provideApiBaseUrl() = BuildConfig.BASE_URL
+
+    @ApiKey
+    @Provides
+    fun provideApiKey() = BuildConfig.API_KEY
 }
