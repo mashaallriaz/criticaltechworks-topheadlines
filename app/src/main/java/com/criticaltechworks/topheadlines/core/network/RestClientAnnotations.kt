@@ -9,3 +9,7 @@ annotation class RestApiClient
 @Qualifier
 @Retention
 annotation class ApiBaseUrl
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class ApiKey

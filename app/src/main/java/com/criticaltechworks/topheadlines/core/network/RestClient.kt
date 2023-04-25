@@ -34,11 +34,14 @@ object RestApiClientModule {
     fun getRestClient(
         @ApiBaseUrl baseUrl: String,
         gson: Gson,
-        okHttpClient: OkHttpClient.Builder
+        okHttpClient: OkHttpClient.Builder,
+        apiKeyInterceptor: ApiKeyInterceptor
     ): Retrofit = retrofitBuilder(
         baseUrl,
         gson,
-        okHttpClient.build()
+        okHttpClient.apply {
+            addInterceptor(apiKeyInterceptor)
+        }.build()
     ).build()
 
     @Provides
@@ -64,4 +67,7 @@ object RestApiClientModule {
                 if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         }
     }
+
+    @Provides
+    fun provideApiKeyInterceptor(@ApiKey apiKey: String) = ApiKeyInterceptor(apiKey)
 }
