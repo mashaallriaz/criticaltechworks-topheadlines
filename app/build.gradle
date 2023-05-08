@@ -27,9 +27,26 @@ android {
 
     flavorDimensions "default"
     productFlavors {
-        dev {
+        bbc {
             buildConfigField "String", "BASE_URL", BASE_URL
             buildConfigField "String", "API_KEY", API_KEY
+            buildConfigField "String", "SOURCE", NEWS_SOURCE_BBC
+        }
+
+        independent {
+            buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "API_KEY", API_KEY
+            buildConfigField "String", "SOURCE", NEWS_SOURCE_INDEPENDENT
+        }
+    }
+
+    sourceSets {
+        bbc {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+        }
+
+        independent {
+            manifest.srcFile 'src/main/AndroidManifest-Independent.xml'
         }
     }
 

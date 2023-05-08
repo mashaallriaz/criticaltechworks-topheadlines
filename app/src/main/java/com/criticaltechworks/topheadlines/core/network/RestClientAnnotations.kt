@@ -13,3 +13,7 @@ annotation class ApiBaseUrl
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class ApiKey
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class NewsSource

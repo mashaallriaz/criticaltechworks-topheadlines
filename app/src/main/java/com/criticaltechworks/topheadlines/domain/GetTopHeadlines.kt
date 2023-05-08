@@ -7,9 +7,11 @@ import com.criticaltechworks.topheadlines.data.models.TopHeadlinesResponse
 import javax.inject.Inject
 
 class GetTopHeadlines @Inject constructor(private val newsRepository: NewsRepository) :
-    FlowResourceInteractor<Unit, TopHeadlinesResponse>() {
+    FlowResourceInteractor<GetTopHeadlines.Params, TopHeadlinesResponse>() {
 
-    override suspend fun doWork(params: Unit): ApiResponse<TopHeadlinesResponse> {
-        return newsRepository.fetchTopHeadlines()
+    override suspend fun doWork(params: Params): ApiResponse<TopHeadlinesResponse> {
+        return newsRepository.fetchTopHeadlines(params.source)
     }
+
+    data class Params(val source: String)
 }

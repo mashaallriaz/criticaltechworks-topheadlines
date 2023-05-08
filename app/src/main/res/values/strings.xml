@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Top Headlines</string>
+    <string name="app_name_bbc">BBC News</string>
+    <string name="app_name_independent">Independent News</string>
 </resources>
