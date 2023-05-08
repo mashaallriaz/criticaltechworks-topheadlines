@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/criticaltechworks-topheadlines.iml" filepath="$PROJECT_DIR$/.idea/criticaltechworks-topheadlines.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Top_Headlines.iml" filepath="$PROJECT_DIR$/.idea/modules/Top_Headlines.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Top_Headlines.app.unitTest.iml" />
     </modules>
   </component>
 </project>

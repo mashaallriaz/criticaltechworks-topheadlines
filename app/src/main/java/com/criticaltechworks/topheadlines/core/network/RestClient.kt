@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import org.threeten.bp.LocalDateTime
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -47,6 +48,7 @@ object RestApiClientModule {
     @Provides
     fun provideGson(): Gson {
         return GsonBuilder()
+            .registerTypeAdapter(LocalDateTime::class.java, LocalDateTimeGsonConverter())
             .setLenient()
             .create()
     }

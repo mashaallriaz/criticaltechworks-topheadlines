@@ -1,5 +1,7 @@
 package com.criticaltechworks.topheadlines.data.models
+
 import com.google.gson.annotations.SerializedName
+import org.threeten.bp.LocalDateTime
 
 data class TopHeadlinesResponse(
     @SerializedName("status")
@@ -24,7 +26,7 @@ data class Article(
     @SerializedName("urlToImage")
     val urlToImage: String? = null,
     @SerializedName("publishedAt")
-    val publishedAt: String? = null,
+    val publishedAt: LocalDateTime? = null,
     @SerializedName("content")
     val content: String? = null
 )

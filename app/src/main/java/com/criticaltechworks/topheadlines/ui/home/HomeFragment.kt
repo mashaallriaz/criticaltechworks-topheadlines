@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.criticaltechworks.topheadlines.core.delegate.observeEvent
 import com.criticaltechworks.topheadlines.databinding.FragmentHomeBinding
 import com.criticaltechworks.topheadlines.ui.FragmentWithBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -38,6 +40,10 @@ class HomeFragment : FragmentWithBinding<FragmentHomeBinding>() {
     private fun registerObservers() {
         viewModel.liveState.observe(viewLifecycleOwner) {
             controller.state = it
+        }
+
+        viewModel.error.observeEvent(viewLifecycleOwner) {
+            Snackbar.make(requireBinding().root, it, Snackbar.LENGTH_LONG).show()
         }
     }
 }

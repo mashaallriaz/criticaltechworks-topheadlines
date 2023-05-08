@@ -1,6 +1,5 @@
 package com.criticaltechworks.topheadlines.ui.home
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.criticaltechworks.topheadlines.core.network.InvokeError
 import com.criticaltechworks.topheadlines.core.network.InvokeLoading
@@ -23,10 +22,15 @@ class HomeViewModel @Inject constructor(private val getTopHeadlines: GetTopHeadl
                         launchSetState { copy(isLoading = true) }
                     }
                     InvokeSuccess -> {
-                        Log.d("Hello", "Hello")
+                        launchSetState {
+                            copy(
+                                isLoading = false,
+                                articles = result.data?.articles?.sortedByDescending { it.publishedAt })
+                        }
                     }
                     InvokeError -> {
-                        Log.d("Hi", "Hello 83663896938 ${result.error?.error}")
+                        launchSetState { copy(isLoading = false) }
+                        error { result.error?.error }
                     }
                 }
             }

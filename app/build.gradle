@@ -73,4 +73,7 @@ dependencies {
     implementation 'com.airbnb.android:epoxy:4.2.0'
     implementation 'com.airbnb.android:epoxy-databinding:4.2.0'
     kapt 'com.airbnb.android:epoxy-processor:4.2.0'
+
+    implementation 'io.coil-kt:coil:1.4.0'
+    implementation 'org.threeten:threetenbp:1.4.4'
 }
