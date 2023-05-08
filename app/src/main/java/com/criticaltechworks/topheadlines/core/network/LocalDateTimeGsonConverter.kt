@@ -19,7 +19,7 @@ class LocalDateTimeGsonConverter : JsonDeserializer<LocalDateTime>, JsonSerializ
         typeOF: Type,
         context: JsonDeserializationContext
     ): LocalDateTime? {
-        return DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'")
+        return DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSSSSSS]'Z'")
             .withZone(ZoneOffset.UTC).parse(
                 jsonElement.asString,
                 LocalDateTime::from
@@ -31,7 +31,7 @@ class LocalDateTimeGsonConverter : JsonDeserializer<LocalDateTime>, JsonSerializ
         typeOfSrc: Type?,
         context: JsonSerializationContext?
     ): JsonElement {
-        return JsonPrimitive(src?.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSS'Z'")))
+        return JsonPrimitive(src?.format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss[.SSSSSSS]'Z'")))
     }
 }
 
