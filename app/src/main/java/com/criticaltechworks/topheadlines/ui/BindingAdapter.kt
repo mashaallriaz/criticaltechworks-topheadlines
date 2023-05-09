@@ -1,4 +1,4 @@
-package com.criticaltechworks.topheadlines.ui.binding
+package com.criticaltechworks.topheadlines.ui
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
