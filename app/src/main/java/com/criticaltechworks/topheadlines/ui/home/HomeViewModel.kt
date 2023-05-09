@@ -1,10 +1,12 @@
 package com.criticaltechworks.topheadlines.ui.home
 
 import androidx.lifecycle.viewModelScope
+import com.criticaltechworks.topheadlines.core.data.NavigationCommand
 import com.criticaltechworks.topheadlines.core.network.InvokeError
 import com.criticaltechworks.topheadlines.core.network.InvokeLoading
 import com.criticaltechworks.topheadlines.core.network.InvokeSuccess
 import com.criticaltechworks.topheadlines.core.network.NewsSource
+import com.criticaltechworks.topheadlines.data.models.Article
 import com.criticaltechworks.topheadlines.domain.GetTopHeadlines
 import com.criticaltechworks.topheadlines.ui.StateViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -38,5 +40,13 @@ class HomeViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun navigateToHeadlineDetail(article: Article) {
+        navigateTo { HomeNavigation.HeadlineDetail(article) }
+    }
+
+    sealed class HomeNavigation : NavigationCommand() {
+        data class HeadlineDetail(val article: Article) : HomeNavigation()
     }
 }

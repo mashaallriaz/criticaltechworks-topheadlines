@@ -2,6 +2,7 @@ package com.criticaltechworks.topheadlines.ui.home
 
 import com.airbnb.epoxy.EpoxyController
 import com.criticaltechworks.topheadlines.core.delegate.observable
+import com.criticaltechworks.topheadlines.data.models.Article
 import com.criticaltechworks.topheadlines.headline
 import com.criticaltechworks.topheadlines.loader
 import javax.inject.Inject
@@ -13,6 +14,7 @@ internal class HomeEpoxyController @Inject constructor(private val homeTextCreat
     var state: HomeViewState by observable(HomeViewState(), ::requestModelBuild)
 
     interface Callbacks {
+        fun onClickArticle(article: Article)
     }
 
     override fun buildModels() {
@@ -29,6 +31,7 @@ internal class HomeEpoxyController @Inject constructor(private val homeTextCreat
                 id("article-${index}-${article.title}")
                 article(article)
                 textCreator(homeTextCreator)
+                clickListener { model, _, _, _ -> callbacks?.onClickArticle(model.article()) }
             }
         }
     }

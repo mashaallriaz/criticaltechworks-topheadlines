@@ -8,7 +8,19 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.criticaltechworks.topheadlines.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_simple_list">
+        <action
+            android:id="@+id/actionHeadlineDetailFragment"
+            app:destination="@id/headlineDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/headlineDetailFragment"
+        android:name="com.criticaltechworks.topheadlines.ui.headlinedetail.HeadlineDetailFragment"
+        tools:layout="@layout/fragment_simple_list">
+        <argument
+            android:name="article"
+            app:argType="com.criticaltechworks.topheadlines.data.models.Article" />
     </fragment>
 
 </navigation>

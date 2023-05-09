@@ -1,6 +1,8 @@
 package com.criticaltechworks.topheadlines.data.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 import org.threeten.bp.LocalDateTime
 
 data class TopHeadlinesResponse(
@@ -12,6 +14,7 @@ data class TopHeadlinesResponse(
     val articles: List<Article>? = null
 )
 
+@Parcelize
 data class Article(
     @SerializedName("source")
     val source: Source? = null,
@@ -29,11 +32,12 @@ data class Article(
     val publishedAt: LocalDateTime? = null,
     @SerializedName("content")
     val content: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Source(
     @SerializedName("id")
     val id: String? = null,
     @SerializedName("name")
     val name: String? = null
-)
+) : Parcelable

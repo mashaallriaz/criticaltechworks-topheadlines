@@ -12,13 +12,18 @@
         <variable
             name="textCreator"
             type="com.criticaltechworks.topheadlines.ui.home.HomeTextCreator" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginVertical="8dp">
+        android:layout_marginVertical="8dp"
+        android:onClick="@{clickListener}">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/img_headline"
