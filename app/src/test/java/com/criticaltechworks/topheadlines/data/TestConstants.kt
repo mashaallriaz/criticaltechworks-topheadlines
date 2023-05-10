@@ -1,4 +1,4 @@
-package com.criticaltechworks.topheadlines
+package com.criticaltechworks.topheadlines.data
 
 import com.criticaltechworks.topheadlines.core.network.Result
 import com.criticaltechworks.topheadlines.data.models.Article
@@ -12,5 +12,7 @@ object TestConstants {
     const val NEWS_SOURCE = "bbc-news"
     val ARTICLE = Article(Source(), "Author", "Title", "Description")
     val GET_TOP_HEADLINES_RESPONSE = TopHeadlinesResponse("Success", 1, listOf(ARTICLE))
-    val GET_TOP_HEADLINES_RESULT: Result<TopHeadlinesResponse> = Result.success(GET_TOP_HEADLINES_RESPONSE)
+    val GET_TOP_HEADLINES_RESULT: Result<TopHeadlinesResponse> = Result.success(
+        GET_TOP_HEADLINES_RESPONSE
+    )
 }

@@ -1,11 +1,12 @@
-package com.criticaltechworks.topheadlines
+package com.criticaltechworks.topheadlines.ui
 
-import com.criticaltechworks.topheadlines.TestConstants.ARTICLE
-import com.criticaltechworks.topheadlines.TestConstants.ERROR_MESSAGE
-import com.criticaltechworks.topheadlines.TestConstants.ERROR_RESULT
-import com.criticaltechworks.topheadlines.TestConstants.GET_TOP_HEADLINES_RESPONSE
-import com.criticaltechworks.topheadlines.TestConstants.GET_TOP_HEADLINES_RESULT
-import com.criticaltechworks.topheadlines.TestConstants.NEWS_SOURCE
+import com.criticaltechworks.topheadlines.MainDispatcherTest
+import com.criticaltechworks.topheadlines.data.TestConstants.ARTICLE
+import com.criticaltechworks.topheadlines.data.TestConstants.ERROR_MESSAGE
+import com.criticaltechworks.topheadlines.data.TestConstants.ERROR_RESULT
+import com.criticaltechworks.topheadlines.data.TestConstants.GET_TOP_HEADLINES_RESPONSE
+import com.criticaltechworks.topheadlines.data.TestConstants.GET_TOP_HEADLINES_RESULT
+import com.criticaltechworks.topheadlines.data.TestConstants.NEWS_SOURCE
 import com.criticaltechworks.topheadlines.core.delegate.value
 import com.criticaltechworks.topheadlines.core.network.Result
 import com.criticaltechworks.topheadlines.domain.GetTopHeadlines
