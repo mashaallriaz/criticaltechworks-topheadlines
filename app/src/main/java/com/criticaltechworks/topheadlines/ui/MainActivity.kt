@@ -3,7 +3,7 @@ package com.criticaltechworks.topheadlines.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.criticaltechworks.topheadlines.R
-import com.criticaltechworks.topheadlines.biometric.BiometricAuthenticator
+import com.criticaltechworks.topheadlines.ui.biometric.BiometricAuthenticator
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

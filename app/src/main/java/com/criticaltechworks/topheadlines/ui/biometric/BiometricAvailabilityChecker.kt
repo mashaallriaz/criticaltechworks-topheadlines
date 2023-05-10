@@ -1,4 +1,4 @@
-package com.criticaltechworks.topheadlines.biometric
+package com.criticaltechworks.topheadlines.ui.biometric
 
 import android.content.Context
 import android.os.Build
