@@ -19,6 +19,8 @@ open class Event<out T>(private val content: @RawValue T?) : Parcelable {
         }
     }
 
+    fun peekContent(): T? = content
+
     companion object {
         fun <T> of(event: T?): Event<T> {
             return Event(event)

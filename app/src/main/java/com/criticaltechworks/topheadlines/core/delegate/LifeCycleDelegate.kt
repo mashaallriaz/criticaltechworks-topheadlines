@@ -13,3 +13,5 @@ fun <T> MutableLiveData<Event<T>>.postEvent(t: T) {
 fun <T> LiveData<Event<T>>.observeEvent(owner: LifecycleOwner, observer: Observer<T>) {
     observe(owner) { it?.getEventIfNotHandled()?.let { content -> observer.onChanged(content) } }
 }
+
+fun <T> LiveData<Event<T>>.value() = value?.peekContent()
